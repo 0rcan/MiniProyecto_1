@@ -1,3 +1,6 @@
+import javax.swing.JOptionPane;
+import java.util.ArrayList;
+import java.util.List;
 public class Soldado{ //Clase Principal Soldado 
     
     //Atributos
@@ -12,6 +15,25 @@ public class Soldado{ //Clase Principal Soldado
         this.id = id;
         this.rango = rango;
         
+    }
+    public Soldado() {
+        
+    }
+    public void crearsoldado(){
+            String nombre = JOptionPane.showInputDialog("Ingrese el nombre del soldado:");
+            String id = JOptionPane.showInputDialog("Ingrese el ID del soldado:");
+            String rango = JOptionPane.showInputDialog("Ingrese el rango del soldado:");
+
+            Soldado nuevoSoldado = new Soldado(nombre, id, rango);
+
+            List<Soldado> listaSoldados = new ArrayList<>();
+            listaSoldados.add(nuevoSoldado);
+
+            JOptionPane.showMessageDialog(null, "Soldado creado y agregado a la lista.");
+
+            System.out.println( listaSoldados);
+
+
     }
 
     public void mostrarInformacion(){
