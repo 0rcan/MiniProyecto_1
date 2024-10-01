@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 public class App {
@@ -16,13 +15,16 @@ public class App {
         "[4] Coronel \n" +
         "[X] Cerrar progama \n");
 		//JOptionPane.showMessageDialog(null, "Hello " + name);
-	
         switch(opcion){
             case "1":
-                System.out.println("Soldado Raso");
+            
+                Soldado solado1 = new Soldado();
+                solado1.crear();
+                
                 break;
+                
             case "x":
-                  // code block
+                System.exit(0);
                 break;
             default:
                   // code block
