@@ -1,34 +1,35 @@
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class App {
+public class App  {
     public static void main(String[] args) throws Exception {
         
+        
+        Soldado soldado1= new Soldado();
+        soldado1.crearsoldado();
+        }
 
 
 
 
-		String opcion = JOptionPane.showInputDialog(
-        "[1] SoldadoRaso \n" +
-        "[2] Teniente \n" +
-        "[3] Capitan \n" +
-        "[4] Coronel \n" +
-        "[X] Cerrar progama \n");
-		//JOptionPane.showMessageDialog(null, "Hello " + name);
-        switch(opcion){
-            case "1":
-            
-                Soldado solado1 = new Soldado();
-                solado1.crear();
-                
-                break;
-                
-            case "x":
-                System.exit(0);
-                break;
-            default:
-                  // code block
-            }
+		// String opcion = JOptionPane.showInputDialog(
+        // "[1] SoldadoRaso \n" +
+        // "[2] Teniente \n" +
+        // "[3] Capitan \n" +
+        // "[4] Coronel \n" +
+        // "[X] Cerrar progama \n");
+		// JOptionPane.showMessageDialog(null, "Hello " + name);
+	
+        // switch(opcion){
+        //     case "1":
+        //         System.out.println("Soldado Raso");
+        //         break;
+        //     case "x":
+        //           code block
+        //         break;
+        //     default:
+        //           code block
+        //     }
         
         // System.out.println("---Bienvenido a la base militar---");
 
@@ -55,4 +56,3 @@ public class App {
         //Soldado soldado1 = new Soldado("Juan", "123", "Soldado", 1);
         //soldado1.mostrarInformacion();
     }
-}

@@ -5,6 +5,8 @@ public abstract class Rango { //clase abstracta no puede instanciarse como objet
     public Rango (int nivel){
         this.nivel=nivel;
     }
+    
+
 
     public abstract void realizarAccion(); //metodo abstracto
 }
