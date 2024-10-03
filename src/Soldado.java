@@ -7,7 +7,7 @@ public class Soldado{ //Clase Principal Soldado
     String nombre;
     String id;
     String rango;
-    List<Soldado> listaSoldados = new ArrayList<>();
+    static List<Soldado> listaSoldados = new ArrayList<>();
     
     
     
@@ -31,7 +31,7 @@ public class Soldado{ //Clase Principal Soldado
                 Soldado.crearsoldado();
                 break;
             case "2":
-                //Soldado.mostrarInformacion();
+                Soldado.mostrarInformacion();
                 break;
             case "3":
                 //Soldado.mostrarInformacion();
@@ -59,21 +59,22 @@ public class Soldado{ //Clase Principal Soldado
             
             Soldado nuevoSoldado = new Soldado(nombre, id, rango);
             
-            List<Soldado> listaSoldados = new ArrayList<>();
+            //List<Soldado> listaSoldados = new ArrayList<>();
             listaSoldados.add(nuevoSoldado);
             
             JOptionPane.showMessageDialog(null, "Soldado creado y agregado a la lista.");
+           
+            
         }
 
-        public static void mostrarInformacion(){
 
-            Soldado[] listaSoldados;
-        listaSoldados = new Soldado[3];
+    public static void mostrarInformacion(){
         for (Soldado soldado : listaSoldados) {
-            System.out.println("Nombre: " + soldado.nombre);
-            System.out.println("ID: " + soldado.id);
-            System.out.println("Rango: " + soldado.rango);
+            JOptionPane.showMessageDialog(null, "Nombre: " + soldado.nombre + "\n" +
+                    "ID: " + soldado.id + "\n" +
+                    "Rango: " + soldado.rango + "\n");
         }
-        
+       
+    
     }
 }
