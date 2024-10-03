@@ -44,7 +44,7 @@ public class Soldado{ //Clase Principal Soldado
                 op.menu();
                 break;
             default:
-                  //code block;
+                JOptionPane.showMessageDialog(null, "Opcion no valida");
     }
     
     }
@@ -63,7 +63,7 @@ public class Soldado{ //Clase Principal Soldado
             listaSoldados.add(nuevoSoldado);
             
             JOptionPane.showMessageDialog(null, "Soldado creado y agregado a la lista.");
-           
+        
             
         }
 
@@ -74,7 +74,7 @@ public class Soldado{ //Clase Principal Soldado
                     "ID: " + soldado.id + "\n" +
                     "Rango: " + soldado.rango + "\n");
         }
-       
+    
     
     }
 }
