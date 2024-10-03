@@ -19,6 +19,7 @@ public class Soldado{ //Clase Principal Soldado
     public Soldado() {
         
     }
+    //Se crea el metodo para crear un soldado
     public void crearsoldado(){
             String nombre = JOptionPane.showInputDialog("Ingrese el nombre del soldado:");
             String id = JOptionPane.showInputDialog("Ingrese el ID del soldado:");
