@@ -13,16 +13,16 @@ public class OperacionesMilitares {
             
             switch(opcion){
                 case "1":
-                    Soldado.menu();
+                    SoldadoRaso.menu();
                     break;
                 case "2":
-                    //Soldado.menu();
+                    Teniente.menu();
                     break;
                 case "3":
-                    //Soldado.menu();
+                    Capitan.menu();
                     break;
                 case "4":
-                    //Soldado.menu();
+                    Coronel.menu();
                     break;
                 case "x":
                     System.exit(0);

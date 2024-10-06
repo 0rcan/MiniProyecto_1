@@ -10,4 +10,8 @@ public class SoldadoRaso extends Soldado {
         System.out.println("Soy un soldado raso y estoy en combate");
     }
 
+    public static void menu(){ //metodo estatico menu
+        Soldado.menu(); //en estaticos se debe llamar directamente a la clase padre
+    }
+
 }
