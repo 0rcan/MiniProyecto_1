@@ -18,66 +18,66 @@ public class Soldado{ //Clase Principal Soldado
     }
 
 
-    public static void menu(){
-    String opcion = JOptionPane.showInputDialog(
-        "[1] Crear soldado \n" +
-        "[2] Mostrar informacion del soldado \n" +
-        "[3] Modificar soldado \n" +
-        "[4] Cerrar programa  \n" +
-        "[00] Regresar al menu principal \n");
+    // public static void menu(){
+    // String opcion = JOptionPane.showInputDialog(
+    //     "[1] Crear soldado \n" +
+    //     "[2] Mostrar informacion del soldado \n" +
+    //     "[3] Modificar soldado \n" +
+    //     "[4] Cerrar programa  \n" +
+    //     "[00] Regresar al menu principal \n");
 
-        switch(opcion){
-            case "1":
-                Soldado.crearsoldado();
-                break;
-            case "2":
-                Soldado.mostrarInformacion();
-                break;
-            case "3":
-                Soldado.modificarSoldado();
-                break;
-            case "4":
-                //Soldado.mostrarInformacion();
-                break;
-            case "00":
-                OperacionesMilitares op = new OperacionesMilitares(); //Cierra ventana actual
-                op.menu();
-                break;
-            default:
-                JOptionPane.showMessageDialog(null, "Opcion no valida");
-    }
+    //     switch(opcion){
+    //         case "1":
+    //             Soldado.crearsoldado();
+    //             break;
+    //         case "2":
+    //             Soldado.mostrarInformacion();
+    //             break;
+    //         case "3":
+    //             Soldado.modificarSoldado();
+    //             break;
+    //         case "4":
+    //             //Soldado.mostrarInformacion();
+    //             break;
+    //         case "00":
+    //             // OperacionesMilitares op = new OperacionesMilitares(); //Cierra ventana actual
+    //             // op.menu();
+    //             break;
+    //         default:
+    //             JOptionPane.showMessageDialog(null, "Opcion no valida");
+    // }
     
-    }
-    public Soldado() {
+    // }
+    // public Soldado() {
         
-    }
-    //Se crea el metodo para crear un soldado
-    public static void crearsoldado(){
-            String nombre = JOptionPane.showInputDialog("Ingrese el nombre del soldado:");
-            String id = JOptionPane.showInputDialog("Ingrese el ID del soldado:");
-            String rango = JOptionPane.showInputDialog("Ingrese el rango del soldado:");
+    // }
+    // //Se crea el metodo para crear un soldado
+    // public static void crearsoldado(){
+    //         String nombre = JOptionPane.showInputDialog("Ingrese el nombre del soldado:");
+    //         String id = JOptionPane.showInputDialog("Ingrese el ID del soldado:");
+    //         String rango = JOptionPane.showInputDialog("Ingrese el rango del soldado:");
             
-            Soldado nuevoSoldado = new Soldado(nombre, id, rango);
+    //         Soldado nuevoSoldado = new Soldado(nombre, id, rango);
             
-            //List<Soldado> listaSoldados = new ArrayList<>();
-            listaSoldados.add(nuevoSoldado);
+    //         //List<Soldado> listaSoldados = new ArrayList<>();
+    //         listaSoldados.add(nuevoSoldado);
             
-            JOptionPane.showMessageDialog(null, "Soldado creado y agregado a la lista.");
+    //         JOptionPane.showMessageDialog(null, "Soldado creado y agregado a la lista.");
         
             
-        }
+    //     }
 
 
-    public static void mostrarInformacion(){
-        for (Soldado soldado : listaSoldados) {
-            JOptionPane.showMessageDialog(null, 
-                    "Nombre: " + soldado.nombre + "\n" +
-                    "ID: " + soldado.id + "\n" +
-                    "Rango: " + soldado.rango + "\n");
-        }
-    }
+    // public static void mostrarInformacion(){
+    //     for (Soldado soldado : listaSoldados) {
+    //         JOptionPane.showMessageDialog(null, 
+    //                 "Nombre: " + soldado.nombre + "\n" +
+    //                 "ID: " + soldado.id + "\n" +
+    //                 "Rango: " + soldado.rango + "\n");
+    //     }
+    // }
 
-    public static void modificarSoldado(){
+    // public static void modificarSoldado(){
 
-    }
+    // }
 }
