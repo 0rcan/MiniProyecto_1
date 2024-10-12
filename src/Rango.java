@@ -7,6 +7,9 @@ public abstract class Rango extends Soldado{ //clase abstracta no puede instanci
         this.nivel=nivel;
     }
     
+    public Rango(){
+        
+    }
 
 
     public abstract void realizarAccion(); //metodo abstracto

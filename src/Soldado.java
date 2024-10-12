@@ -17,6 +17,10 @@ public class Soldado{ //Clase Principal Soldado
         this.rango = rango;
     }
 
+    public Soldado() {
+        
+    }
+
 
     // public static void menu(){
     // String opcion = JOptionPane.showInputDialog(
@@ -48,9 +52,8 @@ public class Soldado{ //Clase Principal Soldado
     // }
     
     // }
-    // public Soldado() {
-        
-    // }
+    
+
     // //Se crea el metodo para crear un soldado
     // public static void crearsoldado(){
     //         String nombre = JOptionPane.showInputDialog("Ingrese el nombre del soldado:");
@@ -68,14 +71,16 @@ public class Soldado{ //Clase Principal Soldado
     //     }
 
 
-    // public static void mostrarInformacion(){
-    //     for (Soldado soldado : listaSoldados) {
-    //         JOptionPane.showMessageDialog(null, 
-    //                 "Nombre: " + soldado.nombre + "\n" +
-    //                 "ID: " + soldado.id + "\n" +
-    //                 "Rango: " + soldado.rango + "\n");
-    //     }
-    // }
+    public static void mostrarInformacion(){
+        
+        
+        for (Soldado soldado : listaSoldados) {
+            JOptionPane.showMessageDialog(null, 
+                    "Nombre: " + soldado.nombre + "\n" +
+                    "ID: " + soldado.id + "\n" +
+                    "Rango: " + soldado.rango + "\n");
+        }
+    }
 
     // public static void modificarSoldado(){
 
