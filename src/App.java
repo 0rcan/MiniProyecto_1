@@ -3,10 +3,7 @@ import javax.swing.JOptionPane;
 
 public class App  {
     public static void main(String[] args) throws Exception {
-
-    
-
-
+        
             while (true) {
                 String opcion = JOptionPane.showInputDialog(
                 "[1] SoldadoRaso \n" +
@@ -14,8 +11,9 @@ public class App  {
                 "[3] Capitan \n" +
                 "[4] Coronel \n" +
                 "[0] Cerrar progama \n");
-                
-                SoldadoRaso soldadoRaso = new SoldadoRaso();
+
+                //objetos necesarios para llamar a sus respectivos menus
+                SoldadoRaso soldadoRaso = new SoldadoRaso(); 
                 Teniente teniente = new Teniente();
                 Capitan capitan = new Capitan();
                 Coronel coronel = new Coronel();

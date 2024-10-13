@@ -1,3 +1,4 @@
+import javax.print.DocFlavor.STRING;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,14 +62,23 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
     @Override
     public void crearSoldado() {
 
+            //El paserByte transforma el Optionpane String a un Byte
+            //byte nivel = Byte.parseByte(JOptionPane.showInputDialog("Ingrese el nivel del soldado:"));
+
             String nombre = JOptionPane.showInputDialog("Ingrese el nombre del soldado:");
             String id = JOptionPane.showInputDialog("Ingrese el ID del soldado:");
-            String rango = JOptionPane.showInputDialog("Ingrese el rango del soldado:");
+            String rango = JOptionPane.showInputDialog(
+            "[1] SoldadoRaso \n" +
+            "[2] Teniente \n" +
+            "[3] Capitan \n" +
+            "[4] Coronel \n" +
+            "Ingrese el rango del soldado:");
             
-            Soldado nuevoSoldado = new Soldado(nombre, id, rango);
+            
+            Soldado nuevoSoldadoRaso = new Soldado(nombre, id, rango);
             
             //List<Soldado> listaSoldados = new ArrayList<>();
-            listaSoldados.add(nuevoSoldado);
+            listaSoldados.add(nuevoSoldadoRaso);
             
             JOptionPane.showMessageDialog(null, "Soldado creado y agregado a la lista.");
             

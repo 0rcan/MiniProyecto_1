@@ -72,14 +72,68 @@ public class Soldado{ //Clase Principal Soldado
 
 
     public static void mostrarInformacion(){
+
+        Soldado instancia = new Soldado();
+        instancia.rango = JOptionPane.showInputDialog(
+            "[1] SoldadoRaso \n" +
+            "[2] Teniente \n" +
+            "[3] Capitan \n" +
+            "[4] Coronel \n" +
+            "Realizando busqueda \n"+
+        "\nIngrese el rango del soldado:");
+
+        instancia.id = JOptionPane.showInputDialog( "Ingrese el ID del soldado:");
         
-        
+        //FALTA QUE SOLO UN IF SE EJEVUTE
         for (Soldado soldado : listaSoldados) {
-            JOptionPane.showMessageDialog(null, 
-                    "Nombre: " + soldado.nombre + "\n" +
-                    "ID: " + soldado.id + "\n" +
-                    "Rango: " + soldado.rango + "\n");
+
+            if(instancia.rango.equals("1") && instancia.id.equals(soldado.id)){
+                JOptionPane.showMessageDialog(null, 
+                "Nombre: " + soldado.nombre + "\n" +
+                "ID: " + soldado.id + "\n" +
+                "Rango: " + soldado.rango + "\n");
+                break;
+            }else{
+                JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+            }
+            if(instancia.rango.equals("2") && instancia.id.equals(soldado.id)){
+                JOptionPane.showMessageDialog(null, 
+                "Nombre: " + soldado.nombre + "\n" +
+                "ID: " + soldado.id + "\n" +
+                "Rango: " + soldado.rango + "\n");
+                break;
+            }else{
+                JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                
+            }
+            if(instancia.rango.equals("3") && instancia.id.equals(soldado.id)){
+                JOptionPane.showMessageDialog(null, 
+                "Nombre: " + soldado.nombre + "\n" +
+                "ID: " + soldado.id + "\n" +
+                "Rango: " + soldado.rango + "\n");
+                break;
+            }else{
+                JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                
+            }
+            if(instancia.rango.equals("4") && instancia.id.equals(soldado.id)){
+                JOptionPane.showMessageDialog(null, 
+                "Nombre: " + soldado.nombre + "\n" +
+                "ID: " + soldado.id + "\n" +
+                "Rango: " + soldado.rango + "\n");
+                break;
+            }else{
+                JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                
+            }
+            
+            
         }
+
+
+        
+
+        
     }
 
     // public static void modificarSoldado(){

@@ -67,7 +67,12 @@ public void menu() {
 
             String nombre = JOptionPane.showInputDialog("Ingrese el nombre del soldado:");
             String id = JOptionPane.showInputDialog("Ingrese el ID del soldado:");
-            String rango = JOptionPane.showInputDialog("Ingrese el rango del soldado:");
+            String rango = JOptionPane.showInputDialog(
+            "[1] SoldadoRaso \n" +
+            "[2] Teniente \n" +
+            "[3] Capitan \n" +
+            "[4] Coronel \n" +
+            "Ingrese el rango del soldado:");
             
             Soldado nuevoSoldado = new Soldado(nombre, id, rango);
             
