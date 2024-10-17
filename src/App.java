@@ -6,13 +6,13 @@ public class App  {
         
         while (true) {
             
-            String opcion = JOptionPane.showInputDialog(
+            String opcion = JOptionPane.showInputDialog(null,
                 "[1] Crear soldado \n" +
                 "[2] Mostrar informacion del soldado \n" +
                 "[3] Modificar soldado \n" +
-                "[0] Cerrar programa  \n");
+                "[0] Cerrar programa  \n\n", "Base Militar De Colombia", JOptionPane.QUESTION_MESSAGE);
 
-                SoldadoRaso soldadoRaso = new SoldadoRaso();
+                //SoldadoRaso soldadoRaso = new SoldadoRaso();
 
                 switch(opcion){
                     case "1":
@@ -22,7 +22,7 @@ public class App  {
                         Soldado.mostrarInformacion();
                         break;
                     case "3":
-                        soldadoRaso.modificarSoldado();
+                        Soldado.modificarSoldado();
                         break;
                     case "0":
                         System.exit(0);
@@ -33,44 +33,7 @@ public class App  {
         
         }
 
-            // while (true) {
-                
-            //     String opcion = JOptionPane.showInputDialog(
-            //     "[1] SoldadoRaso \n" +
-            //     "[2] Teniente \n" +
-            //     "[3] Capitan \n" +
-            //     "[4] Coronel \n" +
-            //     "[0] Cerrar progama \n");
 
-            //     //objetos necesarios para llamar a sus respectivos menus
-            //     SoldadoRaso soldadoRaso = new SoldadoRaso(); 
-            //     Teniente teniente = new Teniente();
-            //     Capitan capitan = new Capitan();
-            //     Coronel coronel = new Coronel();
-
-            //     switch(opcion){
-            //         case "1":
-            //             soldadoRaso.menu();
-            //             break;
-            //         case "2":
-            //             teniente.menu();
-            //             break;
-            //         case "3":                     
-            //             capitan.menu();
-            //             break;
-            //         case "4":
-            //             coronel.menu();
-            //             break;
-            //         case "0":
-            //             System.exit(0);
-            //             break;
-            //         default:
-            //             JOptionPane.showMessageDialog(null, "Opcion no valida");
-            //         }
-                
-            //     }
-        
-        
         //System.out.println("---Bienvenido a la base militar---");
 
 

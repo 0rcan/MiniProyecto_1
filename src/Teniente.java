@@ -28,13 +28,6 @@ public class Teniente extends Rango implements OperacionesMilitares {
      //metodos de la interfaz
 
     @Override
-    public void modificarSoldado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
-    }
-
-
-    @Override
     public void asignarMision(String mision) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'asignarMision'");

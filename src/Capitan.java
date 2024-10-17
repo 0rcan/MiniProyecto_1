@@ -23,14 +23,6 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
 
     //metodos de la interfaz
     
-
-    @Override
-    public void modificarSoldado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
-    }
-
-
     @Override
     public void asignarMision(String mision) {
         // TODO Auto-generated method stub

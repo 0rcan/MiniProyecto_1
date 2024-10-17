@@ -21,14 +21,6 @@ public class Coronel extends Rango implements OperacionesMilitares { //clase Cor
     }
 
     //metodos de la interfaz
-    
-
-    @Override
-    public void modificarSoldado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
-    }
-
 
     @Override
     public void asignarMision(String mision) {
