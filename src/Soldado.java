@@ -25,6 +25,20 @@ public class Soldado{ //Clase Principal Soldado
     }
 
 
+    //Metodo para verificar si el ID ya existe en la lista
+    public static boolean idExisteEnLista(List<Soldado> lista, String id) {
+        for (Soldado soldado : lista) {
+            if (soldado.id.equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+
     public static void crearSoldado() {
 
         //El paserByte transforma el Optionpane String a un Byte
@@ -42,75 +56,91 @@ public class Soldado{ //Clase Principal Soldado
         switch (rango) {
             case "1":
                 Soldado nuevoSoldadoRaso = new Soldado(nombre, id, rango);
-                listaSoldadoRaso.add(nuevoSoldadoRaso);
+                
+                //Verificacion si el ID existe en la lista
+                if(!idExisteEnLista(listaSoldadoRaso, id)){
+                        System.out.println("w");
+                        
+                        listaSoldadoRaso.add(nuevoSoldadoRaso); //Se cumple la condicion se agrega el soldado
+                        
+                        JOptionPane.showMessageDialog(null, "Soldado creado y agregado", "Crear Soldado", JOptionPane.INFORMATION_MESSAGE);
+                        
+                    }else{
+                        
+                        System.out.println("p");
+                        JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
+                    }
+                
                 break;
+
             case "2":
                 Soldado nuevoTeniente = new Soldado(nombre, id, rango);
-                listaTeniente.add(nuevoTeniente);
-                break;
+                
+                //Verificacion si el ID existe en la lista
+                if(!idExisteEnLista(listaTeniente, id)){
+                    System.out.println("w");
+                    
+                    listaTeniente.add(nuevoTeniente); //Se cumple la condicion se agrega el soldado
+                    
+                    JOptionPane.showMessageDialog(null, "Soldado creado y agregado", "Crear Soldado", JOptionPane.INFORMATION_MESSAGE);
+                    
+                }else{
+                    
+                    System.out.println("p");
+                    JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
+                }
+            
+            break;
+
             case "3":
                 Soldado nuevoCapitan = new Soldado(nombre, id, rango);
-                listaCapitan.add(nuevoCapitan);
-                break;
+                
+                //Verificacion si el ID existe en la lista
+                if(!idExisteEnLista(listaCapitan, id)){
+                    System.out.println("w");
+                    
+                    listaCapitan.add(nuevoCapitan); //Se cumple la condicion se agrega el soldado
+                    
+                    JOptionPane.showMessageDialog(null, "Soldado creado y agregado", "Crear Soldado", JOptionPane.INFORMATION_MESSAGE);
+                    
+                }else{
+                    
+                    System.out.println("p");
+                    JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
+                }
+            
+            break;
+
             case "4":
                 Soldado nuevoCoronel = new Soldado(nombre, id, rango);
-                listaCoronel.add(nuevoCoronel);
-                break;
-        
+                
+                //Verificacion si el ID existe en la lista
+                if(!idExisteEnLista(listaCoronel, id)){
+                    System.out.println("w");
+                    
+                    listaCoronel.add(nuevoCoronel); //Se cumple la condicion se agrega el soldado
+                    
+                    JOptionPane.showMessageDialog(null, "Soldado creado y agregado", "Crear Soldado", JOptionPane.INFORMATION_MESSAGE);
+                    
+                }else{
+                    
+                    System.out.println("p");
+                    JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
+                }
+            
+            break;
+
             default:
                 JOptionPane.showMessageDialog(null, "Opcion no valida");
                 break;
         }
         
-        
-        //List<Soldado> listaSoldados = new ArrayList<>();
-        
-        
-        JOptionPane.showMessageDialog(null, "Soldado creado y agregado a la lista.", "Crear Soldado", JOptionPane.INFORMATION_MESSAGE);
-        
-    
     }
-
-
-    // public static void menu(){
-    //     while (true) {
-                
-    //         String opcion = JOptionPane.showInputDialog(
-    //         "[1] SoldadoRaso \n" +
-    //         "[2] Teniente \n" +
-    //         "[3] Capitan \n" +
-    //         "[4] Coronel \n" +
-    //         "[0] Cerrar progama \n");
-
-    //         //objetos necesarios para llamar a sus respectivos menus
-    //         SoldadoRaso soldadoRaso = new SoldadoRaso(); 
-    //         Teniente teniente = new Teniente();
-    //         Capitan capitan = new Capitan();
-    //         Coronel coronel = new Coronel();
-
-    //         switch(opcion){
-    //             case "1":
-    //                 soldadoRaso.menu();
-    //                 break;
-    //             case "2":
-    //                 teniente.menu();
-    //                 break;
-    //             case "3":                     
-    //                 capitan.menu();
-    //                 break;
-    //             case "4":
-    //                 coronel.menu();
-    //                 break;
-    //             case "0":
-    //                 System.exit(0);
-    //                 break;
-    //             default:
-    //                 JOptionPane.showMessageDialog(null, "Opcion no valida");
-    //             }
-            
-    //         }
-    // }
     
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+
     public static void mostrarInformacion(){
         //Falta hacer que el else solo se itere una vez
         Soldado instancia = new Soldado();
@@ -125,7 +155,8 @@ public class Soldado{ //Clase Principal Soldado
             
         "\nIngrese el rango del soldado:", "Información Soldado", JOptionPane.QUESTION_MESSAGE);
 
-        
+        boolean encontrado = false;
+
         switch (instancia.rango) {
             case "1":
                 for (Soldado soldado : listaSoldadoRaso) {
@@ -135,12 +166,16 @@ public class Soldado{ //Clase Principal Soldado
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("x");
+                        encontrado = true;
                         break;
-                    }else{
-                        JOptionPane.showMessageDialog(null, "No se encontro el soldado");                    }
-                        
                     }
+                }
+                if (encontrado == false) {
+                    JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                    
+                }
                 break;
+
 
             case "2":
                 System.out.println(listaTeniente.get(0).rango);
@@ -152,31 +187,32 @@ public class Soldado{ //Clase Principal Soldado
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("y");
+                        encontrado = true;
                         break;
-                    }else{
-                        JOptionPane.showMessageDialog(null, "No se encontro el soldado");
-                        
                     }
-                
+                }
+                if (encontrado == false) {
+                    JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                    
                 }
                 break;
 
             case "3":
                 for (Soldado soldado : listaCapitan) {
 
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)
-){
+                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("z");
+                        encontrado = true;
                         break;
-                    }else{
-                        JOptionPane.showMessageDialog(null, "No se encontro el soldado");
-                        
                     }
-                
+                }
+                if (encontrado == false) {
+                    JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                    
                 }
                 break;
 
@@ -189,12 +225,13 @@ public class Soldado{ //Clase Principal Soldado
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("w");
+                        encontrado = true;
                         break;
-                    }else{
-                        JOptionPane.showMessageDialog(null, "No se encontro el soldado");
-                        
                     }
-                
+                }
+                if (encontrado == false) {
+                    JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                    
                 }
                 break;
             
@@ -204,6 +241,10 @@ public class Soldado{ //Clase Principal Soldado
         }
 
     }
+
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
 
     public static void modificarSoldado() {
         
@@ -221,7 +262,7 @@ public class Soldado{ //Clase Principal Soldado
         
         "\nIngrese el rango del soldado:", "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
 
-        ////////////////////////////////////////////
+        boolean encontrado = false;
 
         switch (instancia.rango) {
             case "1":
@@ -247,13 +288,14 @@ public class Soldado{ //Clase Principal Soldado
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("FUNCIONA");
                         JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
-                    
+                        encontrado = true;
                         break;
-                    }else{
-                        JOptionPane.showMessageDialog(null, "No se encontro el soldado a modificar");                   
                     }
                         
-                    }
+                }
+                if(encontrado == false){
+                    JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                }
                 break;
 
             case "2":
@@ -277,13 +319,15 @@ public class Soldado{ //Clase Principal Soldado
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("FUNCIONA");
                         JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
-                
+                        encontrado = true;
                         break;
-                    }else{
-                        JOptionPane.showMessageDialog(null, "No se encontro el soldado a modificar");                    
                     }
+                        
                 }
-            break;
+                if(encontrado == false){
+                    JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                }
+                break;
 
             case "3":
                 for (Soldado soldado : listaCapitan) {
@@ -305,13 +349,15 @@ public class Soldado{ //Clase Principal Soldado
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("FUNCIONA");
                         JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
-                
+                        encontrado = true;
                         break;
-                    }else{
-                        JOptionPane.showMessageDialog(null, "No se encontro el soldado a modificar");                    
                     }
+                        
                 }
-            break;
+                if(encontrado == false){
+                    JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                }
+                break;
 
             case "4":
                 for (Soldado soldado : listaCoronel) {
@@ -332,27 +378,26 @@ public class Soldado{ //Clase Principal Soldado
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("FUNCIONA");
                         JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
-            
+                        encontrado = true;
                         break;
-                    }else{
-                        JOptionPane.showMessageDialog(null, "No se encontro el soldado a modificar");                    
                     }
+                        
                 }
-            break;
+                if(encontrado == false){
+                    JOptionPane.showMessageDialog(null, "No se encontro el soldado");
+                }
+                break;
             
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido");
                 break;
         }
 
-        ////////////////////////////////////////////
-
-
-
         for (Soldado soldado : Soldado.listaSoldadoRaso) {
             System.out.println(soldado+": " + soldado.nombre);
             System.out.println(soldado+": " + soldado.id);
             System.out.println(soldado+": " + soldado.rango);
         }
+
     }
 }
