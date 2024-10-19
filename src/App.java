@@ -16,19 +16,19 @@ public class App  {
 
                 switch(opcion){
                     case "1":
-                        Soldado.crearSoldado();
+                        Soldado.crear();
                         break;
                     case "2":
-                        Soldado.mostrarInformacion();
+                        Soldado.mostrar();
                         break;
                     case "3":
-                        Soldado.modificarSoldado();
+                        Soldado.modificar();
                         break;
                     case "0":
                         System.exit(0);
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "Opcion no valida");
+                    JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Base Militar De Colombia", JOptionPane.ERROR_MESSAGE);
             }
         
         }

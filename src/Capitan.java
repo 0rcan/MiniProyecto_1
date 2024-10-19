@@ -35,6 +35,24 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
     }
 
+    @Override
+    public void crearSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crearSoldadoRaso'");
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+    }
+
+    @Override
+    public void modificarSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
+    }
+
 
     
 }
