@@ -35,6 +35,8 @@ public class Soldado{ //Clase Principal Soldado
         return false;
     }
 
+    
+
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
@@ -59,7 +61,7 @@ public class Soldado{ //Clase Principal Soldado
                 
                 //Verificacion si el ID existe en la lista
                 if(!idExisteEnLista(listaSoldadoRaso, id)){
-                        System.out.println("w");
+                    
                         
                         listaSoldadoRaso.add(nuevoSoldadoRaso); //Se cumple la condicion se agrega el soldado
                         
@@ -67,7 +69,7 @@ public class Soldado{ //Clase Principal Soldado
                         
                     }else{
                         
-                        System.out.println("p");
+                    
                         JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
                     }
                 
@@ -78,7 +80,7 @@ public class Soldado{ //Clase Principal Soldado
                 
                 //Verificacion si el ID existe en la lista
                 if(!idExisteEnLista(listaTeniente, id)){
-                    System.out.println("w");
+                
                     
                     listaTeniente.add(nuevoTeniente); //Se cumple la condicion se agrega el soldado
                     
@@ -86,7 +88,7 @@ public class Soldado{ //Clase Principal Soldado
                     
                 }else{
                     
-                    System.out.println("p");
+                
                     JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
                 }
             
@@ -97,7 +99,7 @@ public class Soldado{ //Clase Principal Soldado
                 
                 //Verificacion si el ID existe en la lista
                 if(!idExisteEnLista(listaCapitan, id)){
-                    System.out.println("w");
+                
                     
                     listaCapitan.add(nuevoCapitan); //Se cumple la condicion se agrega el soldado
                     
@@ -105,7 +107,7 @@ public class Soldado{ //Clase Principal Soldado
                     
                 }else{
                     
-                    System.out.println("p");
+                
                     JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
                 }
             
@@ -116,7 +118,7 @@ public class Soldado{ //Clase Principal Soldado
                 
                 //Verificacion si el ID existe en la lista
                 if(!idExisteEnLista(listaCoronel, id)){
-                    System.out.println("w");
+                
                     
                     listaCoronel.add(nuevoCoronel); //Se cumple la condicion se agrega el soldado
                     
@@ -124,7 +126,7 @@ public class Soldado{ //Clase Principal Soldado
                     
                 }else{
                     
-                    System.out.println("p");
+                
                     JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
                 }
             
@@ -144,8 +146,10 @@ public class Soldado{ //Clase Principal Soldado
     public static void mostrarInformacion(){
         //Falta hacer que el else solo se itere una vez
         Soldado instancia = new Soldado();
+        
+        instancia.nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado:","Información Soldado", JOptionPane.QUESTION_MESSAGE);
 
-        instancia.id = JOptionPane.showInputDialog( "Ingrese el ID del soldado:");
+        instancia.id = JOptionPane.showInputDialog(null, "Ingrese el ID del soldado:","Información Soldado", JOptionPane.QUESTION_MESSAGE);
         
         instancia.rango = JOptionPane.showInputDialog(null,
             "[1] SoldadoRaso \n" +
@@ -160,7 +164,7 @@ public class Soldado{ //Clase Principal Soldado
         switch (instancia.rango) {
             case "1":
                 for (Soldado soldado : listaSoldadoRaso) {
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
+                    if(instancia.nombre.equals(soldado.nombre) && instancia.rango.equals(soldado.rango) && instancia.id.equals(soldado.id)){
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
@@ -181,7 +185,7 @@ public class Soldado{ //Clase Principal Soldado
                 System.out.println(listaTeniente.get(0).rango);
                 for (Soldado soldado : listaTeniente) {
 
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
+                    if(instancia.nombre.equals(soldado.nombre) && instancia.rango.equals(soldado.rango) && instancia.id.equals(soldado.id)){
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
@@ -200,7 +204,7 @@ public class Soldado{ //Clase Principal Soldado
             case "3":
                 for (Soldado soldado : listaCapitan) {
 
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
+                    if(instancia.nombre.equals(soldado.nombre) && instancia.rango.equals(soldado.rango) && instancia.id.equals(soldado.id)){
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
@@ -219,7 +223,7 @@ public class Soldado{ //Clase Principal Soldado
             case "4":
                 for (Soldado soldado : listaCoronel) {
 
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
+                    if(instancia.nombre.equals(soldado.nombre) && instancia.rango.equals(soldado.rango) && instancia.id.equals(soldado.id)){
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
@@ -248,8 +252,9 @@ public class Soldado{ //Clase Principal Soldado
 
     public static void modificarSoldado() {
         
+        //Objeto para almacenar los datos del soldado
         Soldado instancia = new Soldado();
-        
+
         instancia.nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado:","Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
 
         instancia.id = JOptionPane.showInputDialog(null, "Ingrese el ID del soldado:", "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
@@ -262,37 +267,47 @@ public class Soldado{ //Clase Principal Soldado
         
         "\nIngrese el rango del soldado:", "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
 
+        //Variable que verifica si el soldado fue encontrado
         boolean encontrado = false;
 
         switch (instancia.rango) {
             case "1":
+                //Siclo que recorrera la lista
                 for (Soldado soldado : listaSoldadoRaso) {
 
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
+                    //Condicion para verificar si el soldado existe comparando con los datos ingresados
+                    if(instancia.nombre.equals(soldado.nombre) && instancia.rango.equals(soldado.rango) && instancia.id.equals(soldado.id)){
                         
+                        //Mostrar el soldado que se modificara
                         JOptionPane.showMessageDialog(null, 
                         "Soldado Encontrado: \n" +
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         
+                        //Recordatorio no se puede modificar Rangos ya que hace conflicto con la lista donde se almacenan los soldados
                         
-                        //Recordatorio no se puede modificar rangos ya que hace conflicto con la lista donde se almacenan los soldados
+                        //Remplazo de datos
                         soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del soldado:", "Modificar Nombre Soldado", JOptionPane.QUESTION_MESSAGE);
-                        soldado.id= JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado:", "Modificar Rango Soldado", JOptionPane.QUESTION_MESSAGE);
+                        soldado.id = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado:", "Modificar Rango Soldado", JOptionPane.QUESTION_MESSAGE);
 
-                        
+                        //Mostrar la informacion del soldado actualizada
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("FUNCIONA");
                         JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        //Si el soldado fue encontrado la varieable se actualiza
                         encontrado = true;
+
+                        //Fin del siclo for
                         break;
                     }
                         
                 }
+                //Si el soldado no fue encontrado se muestra este un mensaje
                 if(encontrado == false){
                     JOptionPane.showMessageDialog(null, "No se encontro el soldado");
                 }
@@ -302,28 +317,39 @@ public class Soldado{ //Clase Principal Soldado
                 System.out.println(listaTeniente.get(0).rango);
                 for (Soldado soldado : listaTeniente) {
 
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
+                    //Condicion para verificar si el soldado existe comparando con los datos ingresados
+                    if(instancia.nombre.equals(soldado.nombre) && instancia.rango.equals(soldado.rango) && instancia.id.equals(soldado.id)){
+                        
+                        //Mostrar el soldado que se modificara
                         JOptionPane.showMessageDialog(null, 
+                        "Soldado Encontrado: \n" +
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
-                    
-                       //Recordatorio no se puede modificar rangos ya que hace conflicto con la lista donde se almacenan los soldados
+                        
+                        //Recordatorio no se puede modificar Rangos ya que hace conflicto con la lista donde se almacenan los soldados
+                        
+                        //Remplazo de datos
                         soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del soldado:", "Modificar Nombre Soldado", JOptionPane.QUESTION_MESSAGE);
-                        soldado.id= JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado:", "Modificar Rango Soldado", JOptionPane.QUESTION_MESSAGE);
+                        soldado.id = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado:", "Modificar Rango Soldado", JOptionPane.QUESTION_MESSAGE);
 
-                    
+                        //Mostrar la informacion del soldado actualizada
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("FUNCIONA");
                         JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        //Si el soldado fue encontrado la varieable se actualiza
                         encontrado = true;
+
+                        //Fin del siclo for
                         break;
                     }
                         
                 }
+                //Si el soldado no fue encontrado se muestra este un mensaje
                 if(encontrado == false){
                     JOptionPane.showMessageDialog(null, "No se encontro el soldado");
                 }
@@ -332,28 +358,39 @@ public class Soldado{ //Clase Principal Soldado
             case "3":
                 for (Soldado soldado : listaCapitan) {
 
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
+                    //Condicion para verificar si el soldado existe comparando con los datos ingresados
+                    if(instancia.nombre.equals(soldado.nombre) && instancia.rango.equals(soldado.rango) && instancia.id.equals(soldado.id)){
+                        
+                        //Mostrar el soldado que se modificara
                         JOptionPane.showMessageDialog(null, 
+                        "Soldado Encontrado: \n" +
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         
-                        //Recordatorio no se puede modificar rangos ya que hace conflicto con la lista donde se almacenan los soldados
+                        //Recordatorio no se puede modificar Rangos ya que hace conflicto con la lista donde se almacenan los soldados
+                        
+                        //Remplazo de datos
                         soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del soldado:", "Modificar Nombre Soldado", JOptionPane.QUESTION_MESSAGE);
-                        soldado.id= JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado:", "Modificar Rango Soldado", JOptionPane.QUESTION_MESSAGE);
+                        soldado.id = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado:", "Modificar Rango Soldado", JOptionPane.QUESTION_MESSAGE);
 
-                    
+                        //Mostrar la informacion del soldado actualizada
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("FUNCIONA");
                         JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        //Si el soldado fue encontrado la varieable se actualiza
                         encontrado = true;
+
+                        //Fin del siclo for
                         break;
                     }
                         
                 }
+                //Si el soldado no fue encontrado se muestra este un mensaje
                 if(encontrado == false){
                     JOptionPane.showMessageDialog(null, "No se encontro el soldado");
                 }
@@ -362,27 +399,39 @@ public class Soldado{ //Clase Principal Soldado
             case "4":
                 for (Soldado soldado : listaCoronel) {
 
-                    if(instancia.id.equals(soldado.id) && instancia.rango.equals(soldado.rango)){
+                    //Condicion para verificar si el soldado existe comparando con los datos ingresados
+                    if(instancia.nombre.equals(soldado.nombre) && instancia.rango.equals(soldado.rango) && instancia.id.equals(soldado.id)){
+                        
+                        //Mostrar el soldado que se modificara
                         JOptionPane.showMessageDialog(null, 
+                        "Soldado Encontrado: \n" +
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         
-                       //Recordatorio no se puede modificar rangos ya que hace conflicto con la lista donde se almacenan los soldados
-                        soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del soldado:", "Modificar Nombre Soldado", JOptionPane.QUESTION_MESSAGE);
-                        soldado.id= JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado:", "Modificar Rango Soldado", JOptionPane.QUESTION_MESSAGE);
+                        //Recordatorio no se puede modificar Rangos ya que hace conflicto con la lista donde se almacenan los soldados
                         
+                        //Remplazo de datos
+                        soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del soldado:", "Modificar Nombre Soldado", JOptionPane.QUESTION_MESSAGE);
+                        soldado.id = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado:", "Modificar Rango Soldado", JOptionPane.QUESTION_MESSAGE);
+
+                        //Mostrar la informacion del soldado actualizada
                         JOptionPane.showMessageDialog(null, 
                         "Nombre: " + soldado.nombre + "\n" +
                         "ID: " + soldado.id + "\n" +
                         "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                         System.out.println("FUNCIONA");
                         JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+                        
+                        //Si el soldado fue encontrado la varieable se actualiza
                         encontrado = true;
+
+                        //Fin del siclo for
                         break;
                     }
                         
                 }
+                //Si el soldado no fue encontrado se muestra este un mensaje
                 if(encontrado == false){
                     JOptionPane.showMessageDialog(null, "No se encontro el soldado");
                 }

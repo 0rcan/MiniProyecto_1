@@ -35,8 +35,4 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
     }
 
-    
-
-    
-
 }
