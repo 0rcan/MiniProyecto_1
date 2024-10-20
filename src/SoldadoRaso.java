@@ -1,7 +1,5 @@
-import javax.print.DocFlavor.STRING;
 import javax.swing.JOptionPane;
-import java.util.ArrayList;
-import java.util.List;
+
 public class SoldadoRaso extends Rango implements OperacionesMilitares {
 
     public SoldadoRaso(int nivel, String nombre, String id, String rango) {
@@ -75,9 +73,9 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
 
                 //Si se cumple muestra lo siguiente
                 JOptionPane.showMessageDialog(null, 
-                "Nombre: " + soldado.rango + "\n" +
+                "Nombre: " + soldado.nombre + "\n" +
                 "ID: " + soldado.id + "\n" +
-                "Rango: " + soldado.nombre + "\n", "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
+                "Rango: " + soldado.rango + "\n", "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                 System.out.println("x");
 
                 //Si el soldado fue encontrado la varieable se actualiza
@@ -113,6 +111,7 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
                 
                 //Recordatorio no se puede modificar Rangos ya que hace conflicto con la lista donde se almacenan los soldados
                 //Remplazo de datos
+                JOptionPane.showMessageDialog(null, "Soldado encontrado", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                 soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del soldado:", "Modificar Nombre Soldado", JOptionPane.QUESTION_MESSAGE);
                 
                 //do while para evitar ids repetidos

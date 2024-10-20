@@ -6,14 +6,14 @@ public class App  {
         
         while (true) {
             
+            //Opcion de las acciones que se pueden realizar
             String opcion = JOptionPane.showInputDialog(null,
                 "[1] Crear soldado \n" +
                 "[2] Mostrar informacion del soldado \n" +
                 "[3] Modificar soldado \n" +
                 "[0] Cerrar programa  \n\n", "Base Militar De Colombia", JOptionPane.QUESTION_MESSAGE);
 
-                //SoldadoRaso soldadoRaso = new SoldadoRaso();
-
+                //Dependiendo de la opcion se ejecuta el metodo correspondiente
                 switch(opcion){
                     case "1":
                         Soldado.crear();
@@ -32,10 +32,6 @@ public class App  {
             }
         
         }
-
-
-        //System.out.println("---Bienvenido a la base militar---");
-
 
     }
 }
