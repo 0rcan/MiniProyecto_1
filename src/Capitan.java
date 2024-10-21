@@ -7,6 +7,7 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
     
     int cantidadSoldadosBajoSuMando;
     static List<String> misionCapitan = new ArrayList<>();
+    static List<String> reportarCapitan = new ArrayList<>();
 
     public Capitan(int cantidadSoldadosBajoSuMando, int nivel, String nombre, String id, String rango) { //constructor 
         super(nivel, nombre, id, rango); 
@@ -30,6 +31,7 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
     //metodos/de/la/interfaz//
     //////////////////////////
     
+    
     @Override
     public void asignarMision(String mision) {
         //El polimorfismo se encarga de añadir la mision a la lista
@@ -38,8 +40,11 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
     }
     @Override
     public void reportarEstado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
+        
+        String reporte = JOptionPane.showInputDialog(null, "Ingrese el reporte del soldado", "Reportar Estado", JOptionPane.QUESTION_MESSAGE);
+        //El polimorfismo se encarga de añadir el reporte a la lista
+        reportarCapitan.add(reporte);
+        System.out.println( "Misión asignada: " + reporte);
     }
 
     @Override
@@ -53,14 +58,15 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
         //Asignamos una mision al soldado
         String mision = JOptionPane.showInputDialog(null, "Asigne una misíon al soldado Raso", "Asignar Misión", JOptionPane.QUESTION_MESSAGE);
         asignarMision(mision); //Se asigna la mision al soldado
+        reportarEstado();
 
-        
         Soldado nuevoCapitan = new Soldado(nombre, id,rango);
                 
                 //Verificacion si el ID existe en la lista
                 if(!idExisteEnLista(listaCapitan, id)){
                     
                     listaCapitan.add(nuevoCapitan); //Se cumple la condicion se agrega el soldado
+                    
                     JOptionPane.showMessageDialog(null, "Soldado creado y agregado", "Crear Soldado", JOptionPane.INFORMATION_MESSAGE);
                     
                 }else{
@@ -96,6 +102,7 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
                 
                 //Cuando el contador este igualado al indice se imprime en pantalla
                 JOptionPane.showMessageDialog(null, "Misión: " + misionCapitan.get(contador), "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Reporte: " + reportarCapitan.get(contador), "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                 
                 //asignarMision(mision);
 
@@ -115,7 +122,6 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
             JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Información Soldado", JOptionPane.ERROR_MESSAGE);
         }
     }
-
 
     @Override
     public void modificarSoldado() {
@@ -167,12 +173,16 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
                 "ID: " + soldado.id + "\n" +
                 "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                 System.out.println("FUNCIONA");
-                JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
-                
+
                 //Remplazamos el elemento de la posicion contador con su nueva mision gracias a ser
                 String mision = JOptionPane.showInputDialog(null, "Ingrese la nueva misión del soldado", "Modificar Misión", JOptionPane.QUESTION_MESSAGE);
                 misionCapitan.set(contador,mision);
+                String reporte = JOptionPane.showInputDialog(null, "Ingrese la nueva misión del soldado", "Modificar Misión", JOptionPane.QUESTION_MESSAGE);
+                reportarCapitan.set(contador,reporte);
+
+                JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                 
+
                 //Si el soldado fue encontrado la varieable se actualiza
                 encontrado = true;
 
@@ -186,11 +196,8 @@ public class Capitan extends Rango implements OperacionesMilitares{ //clase hija
         if(encontrado == false){
             JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Información Soldado", JOptionPane.ERROR_MESSAGE);
         }
-        
-
+    
     }
-
-
 
     
 }

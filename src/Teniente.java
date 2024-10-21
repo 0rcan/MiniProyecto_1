@@ -7,6 +7,7 @@ public class Teniente extends Rango implements OperacionesMilitares {
     
     String unidad;
     static List<String> misionTeniente = new ArrayList<>();
+    static List<String> reportarTeniente = new ArrayList<>();
 
     public Teniente(String unidad, int nivel, String nombre, String id, String rango) {
         super(nivel, nombre, id, rango);
@@ -33,6 +34,7 @@ public class Teniente extends Rango implements OperacionesMilitares {
     //metodos/de/la/interfaz//
     //////////////////////////
 
+    
     @Override
     public void asignarMision(String mision) {
         //El polimorfismo se encarga de añadir la mision a la lista
@@ -41,8 +43,11 @@ public class Teniente extends Rango implements OperacionesMilitares {
     }
     @Override
     public void reportarEstado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
+        
+        String reporte = JOptionPane.showInputDialog(null, "Ingrese el reporte del soldado", "Reportar Estado", JOptionPane.QUESTION_MESSAGE);
+        //El polimorfismo se encarga de añadir el reporte a la lista
+        reportarTeniente.add(reporte);
+        System.out.println( "Misión asignada: " + reporte);
     }
 
     @Override
@@ -56,14 +61,15 @@ public class Teniente extends Rango implements OperacionesMilitares {
         //Asignamos una mision al soldado
         String mision = JOptionPane.showInputDialog(null, "Asigne una misíon al soldado Raso", "Asignar Misión", JOptionPane.QUESTION_MESSAGE);
         asignarMision(mision); //Se asigna la mision al soldado
+        reportarEstado();
 
-        
         Soldado nuevoTeniente = new Soldado(nombre, id,rango);
                 
                 //Verificacion si el ID existe en la lista
                 if(!idExisteEnLista(listaTeniente, id)){
                     
                     listaTeniente.add(nuevoTeniente); //Se cumple la condicion se agrega el soldado
+                    
                     JOptionPane.showMessageDialog(null, "Soldado creado y agregado", "Crear Soldado", JOptionPane.INFORMATION_MESSAGE);
                     
                 }else{
@@ -99,6 +105,7 @@ public class Teniente extends Rango implements OperacionesMilitares {
                 
                 //Cuando el contador este igualado al indice se imprime en pantalla
                 JOptionPane.showMessageDialog(null, "Misión: " + misionTeniente.get(contador), "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Reporte: " + reportarTeniente.get(contador), "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                 
                 //asignarMision(mision);
 
@@ -118,7 +125,6 @@ public class Teniente extends Rango implements OperacionesMilitares {
             JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Información Soldado", JOptionPane.ERROR_MESSAGE);
         }
     }
-
 
     @Override
     public void modificarSoldado() {
@@ -170,12 +176,16 @@ public class Teniente extends Rango implements OperacionesMilitares {
                 "ID: " + soldado.id + "\n" +
                 "Rango: " + soldado.rango + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                 System.out.println("FUNCIONA");
-                JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
-                
+
                 //Remplazamos el elemento de la posicion contador con su nueva mision gracias a ser
                 String mision = JOptionPane.showInputDialog(null, "Ingrese la nueva misión del soldado", "Modificar Misión", JOptionPane.QUESTION_MESSAGE);
                 misionTeniente.set(contador,mision);
+                String reporte = JOptionPane.showInputDialog(null, "Ingrese la nueva misión del soldado", "Modificar Misión", JOptionPane.QUESTION_MESSAGE);
+                reportarTeniente.set(contador,reporte);
+
+                JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                 
+
                 //Si el soldado fue encontrado la varieable se actualiza
                 encontrado = true;
 
@@ -189,8 +199,7 @@ public class Teniente extends Rango implements OperacionesMilitares {
         if(encontrado == false){
             JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Información Soldado", JOptionPane.ERROR_MESSAGE);
         }
-        
-
+    
     }
 
 }
