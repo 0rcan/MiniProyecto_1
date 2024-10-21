@@ -8,7 +8,7 @@ public class Soldado{ //Clase Principal Soldado
     String id;
     String rango;
 
-    //Listas de los diferentes rangos
+    //Listas de los diferentes rangos de tipo de dato soldado
     static List<Soldado> listaSoldadoRaso = new ArrayList<>();
     static List<Soldado> listaTeniente = new ArrayList<>();
     static List<Soldado> listaCapitan = new ArrayList<>();
@@ -62,9 +62,9 @@ public class Soldado{ //Clase Principal Soldado
         return false;
     }
 
-    //////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////
+    /////////
+    //CREAR//
+    /////////
 
     public static void crear(){ 
 
@@ -76,7 +76,7 @@ public class Soldado{ //Clase Principal Soldado
         "[4] Coronel \n" +
         "\nIngrese el rango del soldado:", "Crear Soldado", JOptionPane.QUESTION_MESSAGE);
         
-        //String rango = JOptionPane.showInputDialog(null,"x");
+        //Dependiendo del rango ejecuta un metodo en una clase diferente
         switch (rango) {
             case "1":
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
@@ -103,9 +103,9 @@ public class Soldado{ //Clase Principal Soldado
         
     }
     
-    //////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////
+    ///////////
+    //MOSTRAR//
+    ///////////
 
     public static void mostrar(){
 
@@ -118,6 +118,7 @@ public class Soldado{ //Clase Principal Soldado
             
         "\nIngrese el rango del soldado:", "Información Soldado", JOptionPane.QUESTION_MESSAGE);
         
+        //Dependiendo del rango ejecuta un metodo en una clase diferente
         switch (rango) {
             case "1":
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
@@ -144,9 +145,9 @@ public class Soldado{ //Clase Principal Soldado
 
     }
 
-    //////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////
+    /////////////
+    //MODIFICAR//
+    /////////////
 
     public static void modificar() {
         
@@ -184,11 +185,8 @@ public class Soldado{ //Clase Principal Soldado
                 break;
         }
 
-        for (Soldado soldado : Soldado.listaSoldadoRaso) {
-            System.out.println(soldado+": " + soldado.nombre);
-            System.out.println(soldado+": " + soldado.id);
-            System.out.println(soldado+": " + soldado.rango);
-        }
+
 
     }
+
 }
