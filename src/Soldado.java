@@ -1,66 +1,28 @@
 import javax.swing.JOptionPane;
-import java.util.ArrayList;
-import java.util.List;
 public class Soldado{ //Clase Principal Soldado 
     
-    //Atributos
+    /////////////
+    //ATRIBUTOS//
+    /////////////
+
     String nombre;
     String id;
     String rango;
-
-    //Listas de los diferentes rangos de tipo de dato soldado
-    static List<Soldado> listaSoldadoRaso = new ArrayList<>();
-    static List<Soldado> listaTeniente = new ArrayList<>();
-    static List<Soldado> listaCapitan = new ArrayList<>();
-    static List<Soldado> listaCoronel = new ArrayList<>();
     
-    
-    public String getNombre() {
-        return nombre;
-    }
+    ///////////////
+    //CONSTRUCTOR//
+    ///////////////
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getRango() {
-        return rango;
-    }
-
-    public void setRango(String rango) {
-        this.rango = rango;
-    }
-
-    //Constructor
     public Soldado(String nombre, String id, String rango) {
         this.nombre = nombre;
         this.id = id;
         this.rango = rango;
     }
-
+    
     public Soldado() {
         
     }
-
-    //Metodo para verificar si el ID ya existe en la lista
-    public static boolean idExisteEnLista(List<Soldado> lista, String id) {
-        
-        //Recorre la lista<Soldado> verificando si el id ya existe
-        for (Soldado soldado : lista) {
-            if (soldado.id.equals(id)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    
 
     /////////
     //CREAR//
@@ -77,6 +39,7 @@ public class Soldado{ //Clase Principal Soldado
         "\nIngrese el rango del soldado:", "Crear Soldado", JOptionPane.QUESTION_MESSAGE);
         
         //Dependiendo del rango ejecuta un metodo en una clase diferente
+        //En este caso se crea un soldado
         switch (rango) {
             case "1":
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
@@ -119,6 +82,7 @@ public class Soldado{ //Clase Principal Soldado
         "\nIngrese el rango del soldado:", "Información Soldado", JOptionPane.QUESTION_MESSAGE);
         
         //Dependiendo del rango ejecuta un metodo en una clase diferente
+        //En este caso se muestra la informacion de un soldado
         switch (rango) {
             case "1":
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
@@ -161,6 +125,7 @@ public class Soldado{ //Clase Principal Soldado
         "\nIngrese el rango del soldado:", "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
 
         //Dependiendo del rango ejecuta un metodo en una clase diferente
+        //En este caso se modifica la información de un soldado
         switch (rango) {
             case "1":
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();

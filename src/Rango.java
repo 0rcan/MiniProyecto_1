@@ -1,5 +1,6 @@
 public abstract class Rango extends Soldado{ //clase abstracta no puede instanciarse como objeto
 
+    //Atributos abstracto
     int nivel;
 
     public Rango (int nivel, String nombre, String id, String rango){
@@ -11,6 +12,6 @@ public abstract class Rango extends Soldado{ //clase abstracta no puede instanci
         
     }
 
-
-    public abstract void realizarAccion(); //metodo abstracto
+    //metodo abstracto
+    public abstract void realizarAccion(); 
 }

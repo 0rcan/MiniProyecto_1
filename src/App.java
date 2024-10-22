@@ -4,6 +4,10 @@ import javax.swing.JOptionPane;
 public class App  {
     public static void main(String[] args) throws Exception {
         
+        //////////////////
+        //MENU/PRINCIPAL//
+        //////////////////
+
         //Ciclo para que el programa no se cierre
         while (true) {
             
@@ -30,7 +34,7 @@ public class App  {
                         break;
                     default:
                     JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Base Militar De Colombia", JOptionPane.ERROR_MESSAGE);
-                    break;
+                        break;
             }
         
         }
